@@ -1,12 +1,77 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Manndresy's personal homepage and social links.">
+    <title>Manndresy — Personal homepage</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@500;600;700;800&display=swap');
+
+        :root {
+            --ink: #17221f;
+            --muted: #61716b;
+            --paper: #f4f0e8;
+            --lime: #d9f15f;
+            --line: rgba(23, 34, 31, 0.16);
+            --coral: #ef765e;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { height: 100%; }
+        body { margin: 0; overflow: hidden; color: var(--ink); background: var(--paper); font-family: 'DM Mono', monospace; }
+        body::before { position: fixed; inset: 0; z-index: -1; content: ''; opacity: 0.35; background-image: linear-gradient(rgba(23, 34, 31, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(23, 34, 31, 0.055) 1px, transparent 1px); background-size: 42px 42px; mask-image: linear-gradient(to bottom, black, transparent 86%); }
+        .page { position: relative; display: flex; flex-direction: column; min-height: 100svh; padding: clamp(24px, 5vw, 64px) clamp(24px, 8vw, 120px) clamp(20px, 4vw, 48px); }
+        .topbar, footer { display: flex; align-items: center; justify-content: space-between; }
+        .mark, .availability, .eyebrow, .social-label, footer { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+        .mark { font-weight: 500; }
+        .availability { display: flex; align-items: center; gap: 9px; color: var(--muted); }
+        .availability::before { width: 7px; height: 7px; border-radius: 50%; content: ''; background: var(--coral); box-shadow: 0 0 0 5px rgba(239, 118, 94, 0.12); }
+        main { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 420px); align-items: center; gap: clamp(48px, 10vw, 180px); flex: 1; width: min(1180px, 100%); margin: 0 auto; }
+        .eyebrow { margin: 0 0 22px; color: var(--muted); }
+        h1 { max-width: 760px; margin: 0; font-family: 'Syne', sans-serif; font-size: clamp(58px, 10vw, 142px); font-weight: 800; line-height: 0.86; letter-spacing: -0.07em; }
+        h1 span { display: block; color: var(--coral); }
+        .intro { max-width: 380px; margin: 32px 0 0 5px; color: var(--muted); font-size: 13px; line-height: 1.8; }
+        .socials { align-self: center; border-top: 1px solid var(--line); }
+        .social-link { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 68px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: padding 180ms ease, color 180ms ease; }
+        .social-link:hover, .social-link:focus-visible { padding: 0 13px; color: var(--coral); outline: none; }
+        .social-link:hover .arrow, .social-link:focus-visible .arrow { transform: translate(3px, -3px); }
+        .social-label { font-weight: 500; }
+        .handle { color: var(--muted); font-size: 12px; }
+        .arrow { transition: transform 180ms ease; }
+        footer { color: var(--muted); }
+        footer a { color: inherit; text-decoration: none; }
+        footer a:hover { color: var(--ink); }
+        @media (max-width: 680px) {
+            .page { padding: 24px 22px 20px; }
+            main { display: flex; flex-direction: column; align-items: stretch; justify-content: center; gap: 36px; }
+            h1 { font-size: clamp(62px, 20vw, 110px); }
+            .intro { margin-top: 22px; }
+            .social-link { min-height: 54px; }
+            footer { font-size: 9px; }
+        }
+    </style>
 </head>
 <body>
-    Bonjour, bienvenue sur mon site web !
-    je suis Manndresy
+    <div class="page">
+        <header class="topbar">
+            <div class="mark">M / 2026</div>
+            <div class="availability">Open to interesting things</div>
+        </header>
+        <main>
+            <section aria-labelledby="intro-title">
+                <p class="eyebrow">Hello, I'm</p>
+                <h1 id="intro-title">Man<span>dresy.</span></h1>
+                <p class="intro">A digital space for the work, ideas, and conversations I’m carrying into the world.</p>
+            </section>
+            <nav class="socials" aria-label="Social links">
+                <a class="social-link" href="https://www.linkedin.com/in/mandresyally/" target="_blank" rel="noreferrer"><span class="social-label">LinkedIn</span><span class="handle">/ mandresyally <span class="arrow">↗</span></span></a>
+                <a class="social-link" href="https://www.threads.net/@mandresyally" target="_blank" rel="noreferrer"><span class="social-label">Threads</span><span class="handle">@mandresyally <span class="arrow">↗</span></span></a>
+                <a class="social-link" href="https://x.com/mandresyally" target="_blank" rel="noreferrer"><span class="social-label">X</span><span class="handle">@mandresyally <span class="arrow">↗</span></span></a>
+                <a class="social-link" href="https://github.com/mandresyally" target="_blank" rel="noreferrer"><span class="social-label">GitHub</span><span class="handle">/ mandresyally <span class="arrow">↗</span></span></a>
+            </nav>
+        </main>
+        <footer><span>Based on the internet</span><a href="mailto:hello@mandresy.me">hello@mandresy.me</a></footer>
+    </div>
 </body>
 </html>
